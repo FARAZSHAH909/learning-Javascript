@@ -255,3 +255,236 @@ console.log(typeof(profile['post']));*/
 // let str="farazshah";
 // str=str.slice(2);
 // console.log(str);
+
+
+// mark=[0,25,45,78,12,65,52];
+// mark[0]=55
+// console.log(mark);
+// console.log(mark.length);
+
+// mark=[0,25,45,78,12,65,52];
+// for(let ind=0;ind < mark.length;ind++){
+//     console.log(mark[ind]);
+
+// }
+
+// mark=[0,25,45,78,12,65,52];
+// for(let ind of mark){
+//     console.log(ind);
+
+// }
+
+
+// for loop
+
+// for(let i = 10;i<=10;i++){
+
+//     console.log("i=",i);
+// }
+
+// while Loop
+// let i=0;
+// while(i<=10){
+//   console.log("i=",i);
+
+//     i++;
+// }
+
+
+// do-while Loop
+
+// let i=0;
+
+// do{
+//  console.log("i=",i);
+
+//    i++;
+
+// }while(i<=20);
+
+
+// for-of Loop 
+
+
+// let str="apna collage";
+
+// for(let val of str){
+//     console.log(val);
+// }
+
+// for-in Loop 
+// const profile = {
+
+//     fullName:'faraz shah',
+//     post:195,
+//     isFollow:true,
+//     userName:'@farazshah',
+//     des:'expamle ......',
+
+
+// }
+
+// for(let val in profile){
+//     console.log(val);
+//     console.log(profile[val]);
+// }
+
+// Strings in JS 
+
+// let str="farazshah";
+// let str2="fayyazshah";
+
+// console.log(str.length);
+// console.log(str[0]);
+// console.log(str.toLocaleLowerCase());
+// console.log(str.toUpperCase());
+// console.log(str.trim());
+// console.log(str.slice(5));
+// console.log(str+str2);
+// console.log(str.replace("faraz","fayyaz"));
+
+
+// const profile = {
+
+//     fullName:'faraz shah',
+//     post:195,
+//     isFollow:true,
+//     userName:'@farazshah',
+//     des:'expamle ......',
+
+
+// }
+
+// let output = `this is a ${profile.fullName} `;
+// console.log(output);
+
+
+// // Arrays in JS 
+
+// let heroes = ["ironman","hulk","thor","batman" ];
+// // heroes[0]="farazman";
+// // heroes.push("siderman","supman","batman");
+// // heroes.pop();
+// // let str=heroes.toString();
+// // console.log(str);
+// // heroes.unshift("siderman","supman","batman");
+// // heroes.shift("ironman","hulk");
+// heroes.splice(1,0,"farazshah");
+// console.log(heroes);
+
+
+// // for(val in heroes){
+// //     console.log(heroes[val]);
+// // }
+
+
+// function
+
+// function math(num1,num2) {
+//     let num3=num1+num2;
+//     console.log(num3);
+// }
+
+// math(10,50);
+
+// function math(num1,num2) {
+//         let num3=num1+num2;
+//         return num3;
+//     }
+    
+//     // let output=math(10,50);
+//     console.log(math(100,50));
+
+
+// const sum = ( a, b ) => {    
+//     return a + b; 
+// }
+// console.log(sum(1,2));
+
+// const num=(a,b)=>{
+//     return a + b; 
+
+// }
+// console.log(num(10,2));
+
+
+
+// let arr = ["ironman","hulk","thor","batman" ];
+
+//  arr.forEach((val)=>{
+//     console.log(cat);
+// })
+
+
+// let arr = ["ironman","hulk","thor","batman" ];
+
+// let newarr=arr.map((val)=>{
+// return val;
+// });
+
+// console.log(newarr);
+
+
+// dom
+
+ //    let head= document.getElementById('head');
+    //    let head2 =document.getElementsByClassName('head2')
+    //    let tag=document.getElementsByTagName('button')
+    //     console.log(head);
+    //     console.log(head2);
+    //     console.log(tag);
+
+//   let red=document.querySelector('.red');
+//   console.log(red);
+//   let green =red.setAttribute('class','green');
+//   let style= green.style.backgroundColor='red';
+//   console.log(green);
+// let red =document.querySelector('h2').style.backgroundColor='red';
+
+// let btn =document.createElement('button');
+// btn.innerText='click me';
+// console.log(btn);
+// let add=document.querySelector('div').prepend();
+// console.log(add);
+
+
+// let btn=document.createElement('button');
+// btn.innerText="click me";
+// btn.style.backgroundColor='black';
+// btn.style.color='white';
+
+// let body=document.querySelector('body').prepend(btn);
+  
+
+// let para=document.querySelector(".mypara");
+// let man=para.getAttribute('class');
+// para.classList.add('newpara');
+// // para.classList.remove('newpara');
+// console.log(para);
+
+
+// let btn=document.querySelector('#click')
+// let body=document.querySelector('body')
+// let mode='light';
+// btn.addEventListener("click",()=>{
+// if(mode==='light'){
+//     mode='dark';
+//   body.style.backgroundColor='black'
+// }else{
+//     mode='light';
+//     body.style.backgroundColor='white'
+// }
+//   console.log(mode);
+// })
+
+// let div=document.querySelector('#para');
+
+// div.onmouseover =()=>{
+//     alert('div was hover');
+    
+// }
+
+// let soces=document.querySelector('#ysorce').innerText='faraz';
+// let red=document.getElementById('ysorce');
+// console.log(red);
+// console.log(soces);
