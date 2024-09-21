@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="game.css" >
+</head>
+<body>
+<CEnter><h1>ROCK PAPER SEISSOR</h1></CEnter>
+<br>
+<center>
+<div class="btn">
+    <button class="chooise" id="rock" style="padding:10px 15px ;margin-right: 10px;">ROCK</button>
+    <button class="chooise" id="paper" style="padding:10px 15px ;margin-right: 10px;">PAPER</button>
+    <button class="chooise" id="seissor" style="padding:10px 15px ;margin-right: 10px;">SEISSOR</button>
+</div>
+</center>
+<br>
+<br>
+<center>
+    <strong  id="ysorce" style="padding:10px 15px ;margin-right: 10px;">0</strong>  
+     <strong id="csorce"  style="padding:10px 15px ;margin-right: 10px;" >0</strong>
+    </center>
+    <center>
+        <strong style="margin-right: 10px;">your</strong>  
+         <strong style="margin-right: 10px;">comp</strong>
+        </center>
+<br>
+<br>
+<center>
+<button id="winmsg" style="padding:10px 100px ;">who is win</button>
+</center>
+
+
+<script>
+    let userscore=0;
+    let compscore=0;
+    
+    let ysorce=document.querySelector('#ysorce');
+    let csorce=document.querySelector('#csorce');
+    let winmsg=document.querySelector('#winmsg');
+
+
+    const gencomchooise= ()=>{
+        let option=['rock','paper','seissor'];
+        let gencomrandinx=Math.floor(Math.random()*3);
+        return option[gencomrandinx]
+    }
+    const playgame= (userchooise)=>{
+        comchooise=gencomchooise();
+        console.log('user chooise' ,userchooise);
+        console.log('comp chooise' ,comchooise);
+
+        if(userchooise ===comchooise){
+            winmsg.innerText='game is draw';
+            console.log("game is draw");
+        }else{
+            let usewin = true;
+            if(userchooise ==='rock'){
+                usewin = comchooise === "paper" ? false : true;
+            }else if(userchooise === 'paper'){
+                usewin =   comchooise ==='seissor' ? false : true;
+
+            }else{
+                usewin =   comchooise ==='rock' ? false : true;
+            }
+            if(usewin){
+            userscore++;
+            ysorce.innerText=userscore;
+            winmsg.innerText='you are win match';
+                console.log("you win")
+                console.log(userscore);
+            }else{
+                compscore++;
+                console.log(compscore);
+
+                csorce.innerText=compscore;
+            winmsg.innerText='computer is win match';
+
+
+                console.log("computer win")
+
+            }
+           
+        }
+        
+    }
+
+    const userchooises=document.querySelectorAll('.chooise');
+    // console.log(userchoose);
+    userchooises.forEach((userchooises)=>{
+        userchooises.addEventListener("click",()=>{
+            let userchooiseid=userchooises.getAttribute('id');
+            playgame(userchooiseid);
+    })
+    })
+     
+    
+   
+
+    
+    
+
+</script>
+    <script src="game.js"></script>
+    
+</body>
+</html>
