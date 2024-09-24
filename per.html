@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- result persontage app -->
+
+    <center>
+        <h1>result app</h1>
+    </center>
+    <center>
+        <div>
+            <input type="text" id="username" placeholder="enter your name">
+            <br>
+            <br>
+            <input type="text" id="subject" placeholder="enter your subject name">
+            <input type="number" id="usermark" placeholder="enter you marks"> <input type="number" id="userobsmark"
+                placeholder="enter obs marks">
+
+            <button id="addmore">add more</button>
+            <button id="submit">add submit</button>
+            <br> <br>
+    </center>
+
+
+
+    </div>
+    <p class="tdusername"></p>
+    <p class="tdsubject"></p>
+    <p class="tdmark"></p>
+    <p class="mark"></p>
+    <script>
+
+
+
+        let addmore = document.querySelector('#addmore');
+        addmore.addEventListener("click", () => {
+            // for(let i=1;i<=3;i++){
+            const newInput = document.createElement('input');
+            newInput.type = 'text'; // Set the input type to text
+            newInput.placeholder = 'Enter something...'; // Optional placeholder
+            newInput.id = 'subject'; // 
+
+
+            // Append the new input to the container
+            document.querySelector('div').appendChild(newInput);
+
+            const numberInput1 = document.createElement('input');
+            numberInput1.type = 'number'; // Set the input type to number
+            numberInput1.placeholder = 'Enter number 1'; // Set a placeholder for first number input
+            numberInput1.id = 'usermark'; // 
+
+            document.querySelector('div').appendChild(numberInput1);
+
+
+            const numberInput2 = document.createElement('input');
+            numberInput2.type = 'number'; // Set the input type to number
+            numberInput2.placeholder = 'Enter number 2'; // 
+            numberInput2.id = 'userobsmark'; // 
+            document.querySelector('div').appendChild(numberInput2);
+
+            const lineBreak1 = document.createElement('br')
+            document.querySelector('div').appendChild(lineBreak1);
+            const lineBreak2 = document.createElement('br')
+            document.querySelector('div').appendChild(lineBreak2);
+
+
+        })
+
+       
+
+        let submit = document.querySelector('#submit');
+        submit.addEventListener("click", () => {
+            let userDataSubject = document.querySelectorAll('#subject');
+            textSubjectArray = [];
+            userDataSubject.forEach((userDataSubject) => {
+                let textSubject = userDataSubject.value.trim();
+                if (textSubject) {
+                    textSubjectArray.push(textSubject);
+
+                }
+                userDataSubject.value = '';
+
+            })
+
+            console.log(textSubjectArray);
+
+            let userDataMark = document.querySelectorAll('#usermark');
+            textMarkArray = [];
+            userDataMark.forEach((userDataMark) => {
+                let textMark = userDataMark.value.trim();
+                if (textMark) {
+                    textMarkArray.push(textMark);
+                    
+                }
+                userDataMark.value = '';
+
+            })
+            console.log(textMarkArray);
+            let userDataObsMark = document.querySelectorAll('#userobsmark');
+            textObsMarkArray = [];
+
+            userDataObsMark.forEach((userDataObsMark) => {
+                let textObsMark = userDataObsMark.value.trim();
+                if (textObsMark) {
+                    textObsMarkArray.push(textObsMark);
+                }
+                userDataObsMark.value = '';
+
+
+            })
+
+            console.log(textObsMarkArray);
+
+
+
+            let tdusername = document.querySelector('.tdusername');
+            let tdsubject = document.querySelector('.tdsubject');
+            let tdmark = document.querySelector('.tdmark');
+            let mark = document.querySelector('.mark');
+            let username = document.querySelector('#username').value;
+            tdusername.innerHTML = username; 
+
+                textSubjectArray.forEach((subject, index) => {
+                    tdsubject.innerHTML += subject + '<br>';
+                    if (textMarkArray[index]) {
+                        tdmark.innerHTML += textMarkArray[index] + '<br>';
+                    }
+
+                    if (textObsMarkArray[index]) {
+                        mark.innerHTML += textObsMarkArray[index]*100 + '<br>';
+
+                    }
+                });
+
+            // Clear previous data
+            // tdmark.innerText = '112';
+            // tdobsmark.innerText = '100'; 
+
+        })
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
